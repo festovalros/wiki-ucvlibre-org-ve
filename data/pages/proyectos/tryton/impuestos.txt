@@ -1,0 +1,11 @@
+====== Impuestos ======
+Gestión Financiera > Configuración > Impuestos.\\ 
+Antes de crear los distintos impuestos, deben crearse los grupos que los contendrán.
+===== Grupos =====
+Los grupos de impuestos se definen mediante los campos Nombre, Código y Clase, éste último puede tomar los valores Compras, Venta o Ambos. Para crearlos, se hace clic en Nuevo, se asignan valores en los campos ya mencionados y se guarda el registro.
+===== Códigos =====
+Se definen mediante los campos Nombre, Código y Empresa (tercero que, si no ha sido creado, puede ser creado de igual manera a partir de éste módulo). Además, los Códigos pueden tener Códigos Padres o Códigos Hijos. En el campo Código Padre se hace clic en buscar y, si no existe, puede crearse en este punto. Los Códigos Hijos también pueden ser creados en la misma pantalla, desde la pestaña Hijos. Información adicional sobre el código puede ser adicionada en la pestaña Descripción.
+===== Impuestos =====
+Se define mediante los campos Nombre y Descripción, y las pestañas Información General y Código.\\ 
+En la pestaña Información General están los campos Código, Secuencia, Fecha Inicial, Fecha Final, Tipo, Compañía, Cuenta de la Factura y Cuenta Nota de Crédito. El campo Tipo puede tomar los Valores, Fijo, Porcentaje o Ninguno. Dependiendo del valor del campo Tipo, se habilita un campo numérico para especificar el valor del Porcentaje o del monto fijo.\\ 
+En la pestaña Código tiene dos secciones: Factura con los campos Código de la Base En Factura y Código del Impuesto en Factura, y la sección Nota de Crédito, con los campos Código de la base en Nota de Crédito y Código del Impuesto en Factura. Cada uno de estos 4 campos tiene asociado un campo Signo que comienza en 1.

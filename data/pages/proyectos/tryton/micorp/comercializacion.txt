@@ -1,0 +1,37 @@
+====== Comercialización ======
+Es el //departamento// que interactúa con el cliente y lleva a cabo las negociaciones, y demás relaciones interinstitucionales. Es la cara pública de la empresa. Su coordinación es llevada a cabo por //Jinjer//
+
+===== Contacto con el Cliente =====
+
+Micorp carece de estrategias de captación de clientes, por lo que éstos llegan por referencias de terceros o maneras similares, quienes consiguen el número de teléfono de Administración, pues //Ventas// no posee extensión propia. Una vez canalizado el contacto del cliente, hacia el departamento de Ventas, ocurre una primera aproximación a la necesidad del cliente, y se planifica una primera reunión.
+
+===== Primera Reunión =====
+
+Asiste Jinjer como responsable de la reunión, acompañada por personal técnico del área específica en la que el cliente manifestó necesidad de solución, al momento de buscar los servicios de Micorp y se realizan las siguientes actividades:
+    - Presentación de la empresa, que puede variar entre 7 y 15 minutos, dependiendo de si se realiza la presentación completa con apoyo audiovisual, lo cual depende de la embergadura del proyecto.
+    - Entrega de //Brochure// (folleto, en español) y otros materiales, para dar a conocer las capacidades técnicas de Micorp para presentar soluciones tecnológicas al cliente.
+    - Presentación del Cliente, da a conocer el objeto de su empresa y la naturaleza de la necesidad que lo llevó a Micorp.
+    - **Conclusión**: de esta reunión, Micorp y el cliente establecen con claridad y detalle cuál es la necesidad del cliente y el alcance de la solución que Micorp ha de presentar como p
+
+===== Propuesta Técnica, Económica, Administrativa y Legal =====
+ El departamento de Ventas se encarga de dirigir y coordinar la realización de esta propuesta, junto con las gerencias del área Administrativa, Legal y un equipo técnico especializado en el área de interés del cliente. Una vez que el trabajo conjunto de estos equipos genera la propuesta, y es aprobada por la Dirección de Micorp, se convoca a una Segunda Reunión con el Cliente, para discutir esta propuesta y negociar algunos términos de la misma.
+    - Propuesta Técnica: Es la oferta de solución que el equipo técnico de Micorp le ofrece al cliente, se especifican, lenguajes a utilizar, horas de trabajo, los detalles a desarrollar, entre otras cosas. Es en sí lo sustantivo de la relación comercial entre las partes.
+    - Propuesta Económica: Es el presupuesto presentado por Micorp al cliente, y su realización está a cargo del departamento de Ventas, con base en la Propuesta Técnica.
+    - Propuesta Administrativa: Se presenta un cronograma de pagos, especificando las fechas de facturación calculadas en función de los tiempos de pago, para garantizar los cobros en determinadas fechas. Se indica también la cuenta en en la que deberá ser depositado el dinero.
+    - Propuesta Legal: Establece las condiciones y clausulas que deberán ser establecidas y negociadas con el cliente, para quedar finalmente afirmadas en el contrato de servicio firmado por ambas partes.
+
+===== Segunda Reunión =====
+ También coordinada por el departamento de Ventas, esta reunión tiene por objeto presentarle al cliente la Propuesta, y negociar algunos puntos. su resultado debe quedar plasmado en una Propuesta Modificada.
+
+===== El Contrato =====
+Producto de la Segunda Reunión, el departamento Legal, elabora un contrato de servicios, con base en la Propuesta Modificada, o examina a detalle una propuesta de contrato que bien puede ser presentada por el cliente.
+
+===== Primera Entrega =====
+Antes de realizar la primera entrega, el departamento de Ventas debe recolectar información administrativa del cliente, que le permitirá al departamento de Administración de Micorp articular efectivamente cada cobro. Es necesario elaborar una estandarización de este flujo de información, pues no existe.
+
+===== Cierre del Contrato =====
+Ventas, como coordinadora de la relación interinstitucional, le instruye al departamento legal que la relación comercial ha llegado a su término, con lo que éste departamento elabora el documento de cierre del contrato. Este procedimiento tampoco está estandarizado.
+
+===== Observaciones =====
+El departamento de ventas debe contar con procedimientos estandarizados, como su relación con el departamento Administrativo, como con el Legal.
+

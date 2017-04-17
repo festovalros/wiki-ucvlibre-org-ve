@@ -1,0 +1,5 @@
+  * herramienta de creacion de diagrams de flujo: [[https://www.draw.io|Draw.io]]
+  * diagrama de flujo de trabajo de Fe: {{:proyectos:tryton:diagrama_fe.pdf|}}
+
+
+

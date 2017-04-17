@@ -1,0 +1,2 @@
+====== Gekkonidae ======
+En este espacio debemos preparar todo lo relacionado a la presentación de la caja negra a implementar. En lo sucesivo, todas las cajas negras serán denominadas producto, a no ser que algo distinto sea especificado. 

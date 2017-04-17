@@ -1,0 +1,147 @@
+
+<h1 class="sectionedit1" id="implementacion">Implementación</h1>
+<div class="level1">
+
+<p>
+Realizada ya la <a href="/dokuwiki/doku.php?id=proyectos:tryton:instalacion" class="wikilink1" title="proyectos:tryton:instalacion">Instalación de Tryton</a> y configurados su Cliente y Servidor, lo primero a realizar es la creación de usuarios mediante el asistente inicial.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Implementación" [1-223] -->
+<h2 class="sectionedit2" id="asistente_de_instalacion">Asistente de Instalación</h2>
+<div class="level2">
+
+<p>
+Al iniciar el cliente por primera vez, luego de creada la base de datos desde el cliente, (<a href="/dokuwiki/doku.php?id=proyectos:tryton:instalacion" class="wikilink1" title="proyectos:tryton:instalacion">Instalación de Tryton</a>) se iniciará el asistente de configuración, quien nos guiará paso a paso en la configuración inicial del sistema.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Asistente de Instalación" [224-526] -->
+<h3 class="sectionedit3" id="creacion_de_usuarios">Creación de usuarios</h3>
+<div class="level3">
+
+<p>
+Nos solicita llenar los campos <code>Nombre</code> (presuntamente nombre para mostrar), <code>Nombre de Usuario</code> (presuntamente para uso del sistema, al parecer aceptó caracteres acentuados, espacios y distingue mayúsculas de minúsculas), <code>Contraseña</code> y <code>Correo Electrónico</code><br/>
+
+Adicionalmente, podemos darle atributos al usuario mediante las pestañas:
+</p>
+<ol>
+<li class="level1"><div class="li"> Acción (Falta detalle)</div>
+</li>
+<li class="level1"><div class="li"> Permisos de Acceso (Falta detalle)</div>
+</li>
+<li class="level1"><div class="li"> Preferencias (Falta detalle)</div>
+</li>
+</ol>
+
+<p>
+Podemos elegir tantos usuarios como queramos haciendo clic en <code>Añadir</code>, con lo que la información quedará guardada y el formulario se limpiará para cargar un usuario nuevo. Al agregar la cantidad deseada de usuarios, hacemos clic en <code>Finalizar</code>, luego en <code>Siguiente</code>, con lo que el asistente nos dirá que hemos terminado la configuración inicial, y nos despedimos de él haciendo clic en <code>Finalizar</code>.
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Creación de usuarios" [527-1424] -->
+<h2 class="sectionedit4" id="instalacion_y_actualizacion_de_modulos">Instalación y Actualización de Módulos</h2>
+<div class="level2">
+
+<p>
+A este punto sólo está instalado el módulo de Administración, con el cual podremos crear más usuarios, crear grupos, entre otras cosas, pero, más recomendable es instalar en el sistema todos los módulos que hemos instalado en nuestro sistema operativo. Para ello, basta con hacer clic en el primer módulo de la lista que presenta el módulo Módulos (xD) y presionamos la tecla Enter. Por alguna razón necia, para uno o dos módulos, esto no funciona, así que hay que revisar que todos los módulos estén pendientes por instalar o actualizar, según sea el caso. Constatado el correcto estado para la totalidad de los módulos, hacemos clic en el botón Acción y seleccionamos la opción <code>Realizar las Instalaciones/Actualizaciones Pendientes</code> con lo que aparecerá una ventana de verificación, donde clicqueamos <code>Iniciar Mejora</code> Esto tardará algunos minutos (3 minutos con un procesador I3, 2Gb de RAM y Debian 8 64 bit). Al hacer clic en Finalizar, iniciará atomáticamente el asistente de configuración de los módulos que acabamos de Instalar o Actualizar.
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Instalación y Actualización de Módulos" [1425-2560] -->
+<h2 class="sectionedit5" id="configuracion_de_los_modulos">Configuración de los Módulos</h2>
+<div class="level2">
+
+<p>
+El primer formulario que nos aparecerá es el llamado Compañías.
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Configuración de los Módulos" [2561-2670] -->
+<h3 class="sectionedit6" id="registro_de_compania">Registro de Compañía</h3>
+<div class="level3">
+
+<p>
+El campo nombre no puede ser rellenado de manera directa, al comenzar a escribir, nos aparecerán las opciones <em><code>buscar</code></em> y <em><code>crear</code></em> como no hemos creado nada aún, no hay nada qué buscar; hacemos clic en crear y se abrirá el formulario Terceros. Si hacemos clic en el botón <code>Buscar</code> que está dentro del campo Nombre, nos aparecerá el formulario Buscar, que está vacío, hacemos clic en <code>Nuevo</code> y llegamos nuevamente al formulario Terceros.<br/>
+
+Adicionalmente, este formulario solicita indicar obligatoriamente la moneda con que trabaja dicha compañía, y brinda la opción de indicar su zona horaria. Al crear nuestra compañía como un tercero y cerrar ese formulario, regresaremos a éste, donde seleccionaremos nuestra compañía recién creada y, luego de completar el resto de la información, podremos continuar con el asistente, que nos guiará en la creación de un plan de cuentas desde una plantilla. (detallar el contenido de las pestañas).<br/>
+
+También podremos agregar una lista de los empleados, pero, es recomendable dejar esto para después de crear el plan de cuentas, porque así podremos crear las asociaciones contables con el personal de la empresa.
+</p>
+
+</div>
+
+<h4 id="terceros">Terceros</h4>
+<div class="level4">
+<ol>
+<li class="level1"><div class="li"> Nombre de la compañía</div>
+</li>
+<li class="level1"><div class="li"> El campo Código es un valor interno de Tryton generado automáticamente al finalizar el registro.</div>
+</li>
+<li class="level1"><div class="li"> RIF de la compañía (SIREN).</div>
+</li>
+<li class="level1"><div class="li"> el único campo obligatorio en este formulario, es Nombre. </div>
+</li>
+</ol>
+
+<p>
+El formulario tiene varias pestañas:
+</p>
+<ol>
+<li class="level1"><div class="li"> General: contiene un subformulario para cargar información de tantos contactos para el Tercero como sea necesario, y a cada contacto creado podrá adicionársele tantos medios de contacto como éste disponga.</div>
+</li>
+<li class="level1"><div class="li"> Contabilidad: Mandarín básico.</div>
+</li>
+<li class="level1"><div class="li"> Existencias:</div>
+</li>
+<li class="level1"><div class="li"> Cuentas Bancarias: se pueden crear tantas como sea necesario.</div>
+</li>
+<li class="level1"><div class="li"> Relaciones:</div>
+</li>
+<li class="level1"><div class="li"> Venta: permite elegir métodos de agrupación para las facturas y para despacho de venta.</div>
+</li>
+</ol>
+
+<p>
+En este módulo de Terceros, podemos crear todas las compañías que queramos, de las cuales, algunas podrán ser señaladas como principales y se les asociará un Plan de Cuentas, o podrán luego ser clasificadas como clientes, proveedores o de la forma que corresponda.
+</p>
+
+</div>
+<!-- EDIT6 SECTION "Registro de Compañía" [2671-4896] -->
+<h3 class="sectionedit7" id="plan_de_cuentas">Plan de Cuentas</h3>
+<div class="level3">
+
+<p>
+El asistente de configuración de módulos nos llevará a crear un Plan de Cuentas desde Plantilla para nuestra empresa, elegida de las que creadas en el paso anterior. Para el campo Compañía, elegimos la que corresponda a la nuestra, y en el campo Plantilla de Cuenta, elegimos el que deseemos. Aquí debería aparecer la Plantilla de Plan de Cuentas desarrollada por Micorp. Hechas las selecciones, hacemos clic en Crear.<br/>
+
+En el siguiente paso debemos indicar cuáles serán las Cuentas por Cobrar y por Pagar predeterminadas, haciendo clic en <em>Buscar</em> y seleccionando la cuenta correspondiente a cada caso. Seleccionadas las cuentas, Hacemos nuevo clic en el botón crear y con esto, habremos culminado la instalación básica mediante asistente. Cabe destacar que toda esta configuración, y con mayor detalle incluso, puede ser realizada sin el asistente, desde el módulo correspondiente.<br/>
+
+</p>
+
+</div>
+<!-- EDIT7 SECTION "Plan de Cuentas" [4897-5833] -->
+<h2 class="sectionedit8" id="venezolanizacion_de_tryton">Venezolanización de Tryton</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT8 SECTION "Venezolanización de Tryton" [5834-5873] -->
+<h3 class="sectionedit9" id="cambio_de_variables">Cambio de Variables</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> SIREN: Es equivalente al RIF. Es la manera como se denomina en Francia al NIF o VAT Number Es el número de registro comercial de compañías que operan en Francia, un ejemplo de número SIREN es: RCS PARIS 453 983 245.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT9 SECTION "Cambio de Variables" [5874-6128] -->
+<h3 class="sectionedit10" id="valores_que_deben_ser_establecidos_por_defecto_para_venezuela">Valores que deben ser establecidos por defecto para Venezuela</h3>
+<div class="level3">
+<ol>
+<li class="level1"><div class="li"> Moneda</div>
+</li>
+<li class="level1"><div class="li"> Zona Horaria</div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT10 SECTION "Valores que deben ser establecidos por defecto para Venezuela" [6129-] -->

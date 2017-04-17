@@ -1,0 +1,7 @@
+====== Ideas de características adicionales que podrían ser útiles ======
+
+  * Capta-huellas para médicos.
+  * Conexión con base de datos del SAIME.
+  * modulo para que el paciente pueda consultar desde su casa su historia clínica.
+  * certificación de vacunas impresas.
+  * mensajes de texto al paciente.

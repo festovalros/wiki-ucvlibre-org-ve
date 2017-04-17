@@ -1,0 +1,89 @@
+//Nota: esta guía se sustenta bajo el supuesto de un sistema tryton ya pre-configurado por un administrador del sistema con una base de datos creada, los módulos necesarios ya instalados y un plan de cuentas previamente cargado, cuando iniciamos una base de datos nueva se nos ejecutara un asistente en donde podremos definir estos parámetros por primera vez, para este tipo de configuración ver [[proyectos:tryton:implementacion|Implementación]]// 
+
+Para tener andando los procesos básicos de una empresa (facturación de compras y ventas, administración y contabilidad) bajo la lógica de tryton es necesario la  incorporación de ciertos datos de identificación y la configuración de una serie de parámetros, a lo cual para efectos de esta guía llamaradas **configuración mínima** 
+
+Para la **configuración mínima** de tryton necesitaremos definir las siguientes configuraciones:
+
+====== Usuarios ======
+para acceder al sistema desde el cliente se necesita estar logueado con un nombre de usuario y contraseña, estos usuarios estarán asociados a los permisos correspondiente para modificar y ver diferentes sectores del sistema, en el momento de la creación de la base de datos, se crea un usuario admin el cual tiene la administración total del sistema y los permisos para poder crear nuevos usuarios y asignarles permisos específicos para las diferentes instancias del sistema tryton. La creación de los usuarios y su asignación de permisos solo la pueden realizar usuarios que tengan permisos de administración sobre el sistema tryton,de forma ideal esta configuración se hace al momento de la instalacion del servidor por el personal tecnico.
+====== Terceros ======
+
+Un tercero puede ser un cliente, un proveedor, una persona física o jurídica, una entidad, una fundación, etc. Aquí registraremos cualquier contacto relacionado con nuestra empresa, incluida esta misma y sus empleados.
+
+Para poder facturar es necesario que al menos tengamos registrados en terceros nuestra empresa y luego de creada definir que es nuestra (para que pueda ser vista como nuestra empresa en el resto de los modulos, por ejemplo en el modulo de contabilidad) luego de esto registrar un cliente o proveedor.
+
+Para crear un tercero simplemente debemos introducir un Nombre para identificarlo, también podremos indicar las Direcciones de un tercero, y sus Medios de contacto.También podemos clasificarlos por Categorías y asi organizarlos con la preferencias que tengamos.
+
+En la pestaña Contabilidad, se puede definir Cuenta a pagar y la Cuenta a cobrar que se utilizarán cómo cuentas a cobrar/pagar por defecto en las facturas relacionadas con el tercero. Ademas podremos definir la Regla de impuesto de cliente y la Regla de impuesto de proveedor, para especificar una regla de impuestos que se aplique al tercero. 
+
+Podremos introducir la información bancaria del tercero en el campo Cuentas bancarias.
+
+====== Productos ======
+El concepto de producto en Tryton está compuesto de dos modelos: la plantilla de producto y el producto. Esta separación se usa para poder definir variantes de un producto (por ejemplo: tallas, colores...) definiendo los datos compartidos en la plantilla y los específicos en el producto.
+
+Para crear un producto primero deberemos crear una plantilla desde la opción Productos, especificando cómo mínimo su Nombre, su Tipo, el Precio de venta el Precio de coste, el Método de coste y su unidad de medida por defecto. Además podremos especificarle una Categoría para clasificarlo.
+
+El Tipo puede ser una de las siguientes opciones:Articulo fijo, Articulo, Servicios
+
+Si seleccionamos el tipo Bienes, nos aparecerá el campo Consumible, que debemos marcar si queremos que se controlen el número de existencias de nuestro producto.
+
+
+
+====== Plan contable ======
+
+Para poder facturar en el sistema y estén disponibles todas las funciones contables necesitaremos tener cargado un plan de cuentas, la plantilla del plan de cuentas a usar esta definida en el proceso de instalación del sistema y no debería necesitar interacción alguna con el usuario final para su correcto funcionamiento si embargo el empleado encargado de la contabilidad podría necesitar hacer algunos ajustes a la plantilla del plan contable. Para las características avanzadas del modulo contabilidad ver [[proyectos:tryton:implementacion:gestion_financiera|Gestión Financiera]]
+====== Ejercicio Fiscal ======
+
+Para que se registren los montos de la facturas en las cuentas del plan contable se necesita definir el ejercicio fiscal para ello nos dirigimos al apartado ''años fiscales'' que se encuentra en la ruta gestión financiera>configuración>años fiscales, allí le asignaremos un nombre el año fiscal, una fecha de inicio y cierre y el nombre de la compañía. También sera necesario crear las secuencias correspondientes al ejercicio fiscal,en la pestaña secuencias de esa misma pantalla podremos crear las secuencias asignandoles un nombre y dejando los demás datos como están por defecto. Adicionalmente también podremos crear periodos del ejercicio fiscal que pueden ser mensuales o trimestrales podemos escoger entre alguna de las dos opciones en las pestaña ''periodos''
+crear periodos mensuales o trimestrales.
+====== Termino de pago ======
+
+Para poder facturar se necesita de la existencia de al menos un termino de pago. Podemos crear un método de pago en el apartado ''forma de pago'' lo encontramos en ''gestión financiera>configuración>formas de pago'', aquí crearemos por ejemplo la forma de pago ''efectivo'', hacemos click en crear nuevo registro e introduciremos en nombre "efectivo" luego ponemos en tipo ''saldo'' lo demás lo dejamos con los valores por defecto y guardamos el registro.
+
+====== Facturación ======
+Luego de cumplir con los requisitos anteriores podremos generar nuestra primera factura de venta, iremos a ''Gestión de ventas>Ventas'' estando en la primera pestaña borrador haremos click en agregar nuevo registro.
+
+===== Crear una nueva venta =====
+
+Lo primero que debemos introducir es el Tercero, pudiendo seleccionar uno existente o crear uno de nuevo directamente desde la venta. Una vez seleccionado el Tercero nos rellenara los datos que conozca del cliente, cómo por ejemplo la Dirección de facturación, la Dirección de envío o el Plazo de pago.
+
+Después podemos introducir la líneas, introduciendo una para cada Producto (que previamente habremos creado en EL apartado productos) que queremos presupuestar o vender. Una vez seleccionado el producto introducimos la Cantidad y podemos guardar la línea.
+
+Mediante el campo Tipo, podremos definir distintos tipos de línea. El valor por defecto es Línea, lo que significa que esta línea de pedido de venta contiene los campos mencionados anteriormente. Los otros valores son Comentario, Subtotal y Título que se utilizan para añadir líneas extras que aparecerán en el informe permitiendo de esta forma una personalización más sencilla.
+
+Establecer un producto en un línea del pedido de venta es opcional, de todos modos, si queremos que estos productos sean contabilizados de los depósitos, deberemos seleccionar forzosamente un producto que no sea de tipo servicio.
+
+===== Flujo de ventas =====
+
+En la parte inferior izquierda podremos observar en todo momento en qué estado se encuentra la venta. Los pasos básicos son los siguientes y siguen este orden:
+
+Borrador > Cotización > Confirmado > En proceso > Realizada
+Mientras estamos introduciendo los datos de la venta, ésta se mantendrá en estado borrador. De esta forma podemos guardarla y continuar en otro momento y se mantendrá así hasta que pulsemos el botón Presupuesto momento en el cual pasará al siguiente estado y se rellenará el campo Referencia con el número de venta que se mantendrá tanto para el presupuesto como para el pedido así como para hacer todo el seguimiento posterior.
+
+A continuación se detallan los pasos que pasa un pedido de venta:
+
+Borrador: Representa aquellas ventas que aún no se han terminado de definir.
+Presupuesto: Ventas sobre las que hemos presentado un presupuesto al cliente pero aún no tenemos respuesta.
+Confirmado: El cliente nos ha confirmado la venta, pero aún no se ha iniciado la preparación de la misma.
+En proceso: Se pasa al departamento de almacén y producción. A partir de este momento el sistema ya conoce de la necesidad de servir el producto y puede empezar a planificar producciones y compras si son necesarias.
+Realizada: Todos los albaranes y facturas relacionados con una venta se han generado correctamente.
+Cancelado: Ventas que han sido canceladas antes de confirmar-se. Típicamente se tratará de presupuestos no aprobados por el cliente.
+Nota: Hay que tener en cuenta, que una vez confirmadas las ventas, estas ya no podrán ser modificadas.
+Además también podemos saber el estado de las facturas relacionadas mediante el campo Estado factura y el estado de las notas de envió relacionados mediante el campo Estado envío. Los posibles estados son:
+
+==== Estados de factura ====
+
+Ninguno: Todavía no se ha generado ninguna factura relacionada con esta venta.
+En espera: Se han generado las facturas pero estas en espera de ser pagadas.
+Pagada: Todas las facturas relacionadas con esta venta han sido pagadas.
+Excepción: El sistema había generado una factura pero un usuario ha cancelado la factura. En el apartado Gestión de excepciones se detalla cómo corregir este estado.
+
+==== Devolución de la venta ====
+
+En el caso de realizar una venta, se ha procesado y finalmente se debe abortar la entrega dispone de un asistente en el menú de acciones para hacer para hacer una devolución de la venta.
+
+La acción devolución de la venta simplemente creará una nueva copia de la venta origen pero con la diferencia que las cantidades de las líneas serán ahora en negativo.
+
+Si las cantidades de las líneas de la venta son en negativo, en el momento de procesar el albarán en vez de crear un albarán de cliente, se creará un albarán de abono de cliente y en el momento de generar la factura en vez de crear una factura de cliente se creará un abono.
+
+Nota Se pueden mezclar lineas con cantidades positivas y negativas en una misma venta. En este caso, se generaran albaranes y facturas para las líneas con cantidades positivas y albaranes de devolución y abonos para las negativas.

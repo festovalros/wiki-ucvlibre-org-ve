@@ -1,0 +1,14 @@
+a:2:{s:7:"current";a:9:{s:4:"date";a:2:{s:7:"created";i:1440054292;s:8:"modified";i:1444079393;}s:7:"creator";s:12:"Samuel Pavon";s:4:"user";s:11:"festovalros";s:11:"last_change";b:0;s:11:"contributor";a:2:{s:11:"festovalros";s:12:"Samuel Pavon";s:14:"guachusperquin";s:21:"Marcos Rubén García";}s:5:"title";s:22:"Instalación de Tryton";s:11:"description";a:2:{s:15:"tableofcontents";a:5:{i:0;a:4:{s:3:"hid";s:21:"instalacion_de_tryton";s:5:"title";s:22:"Instalación de Tryton";s:4:"type";s:2:"ul";s:5:"level";i:1;}i:1;a:4:{s:3:"hid";s:14:"pre-requisitos";s:5:"title";s:14:"Pre-Requisitos";s:4:"type";s:2:"ul";s:5:"level";i:2;}i:2;a:4:{s:3:"hid";s:23:"instalacion_del_cliente";s:5:"title";s:24:"Instalación del Cliente";s:4:"type";s:2:"ul";s:5:"level";i:2;}i:3;a:4:{s:3:"hid";s:24:"instalacion_del_servidor";s:5:"title";s:25:"Instalación del Servidor";s:4:"type";s:2:"ul";s:5:"level";i:2;}i:4;a:4:{s:3:"hid";s:26:"configuracion_del_servidor";s:5:"title";s:27:"Configuración del servidor";s:4:"type";s:2:"ul";s:5:"level";i:3;}}s:8:"abstract";s:504:"Instalación de Tryton
+
+Pre-Requisitos
+
+probado en:
+
+	*  maquina virtual creada en virtualbox de 8gb de disco duro y 1gb de ram
+	*  Debian 8 jessie 32bits con escritorio lxde
+	*  sourcelist modificado:
+# deb cdrom:[Debian GNU/Linux 8 _Jessie_ - Official Snapshot amd64 LIVE/INSTALL Binary 20150425-14:07]/ jessie main
+#deb cdrom:[Debian GNU/Linux 8 _Jessie_ - Official Snapshot amd64 LIVE/INSTALL Binary 20150425-14:07]/ jessie main
+
+deb http://ftp.us.debian.org/debian/ jessie main contrib non-free
+d…";}s:8:"internal";a:2:{s:5:"cache";b:1;s:3:"toc";b:1;}s:8:"relation";a:1:{s:10:"firstimage";s:0:"";}}s:10:"persistent";a:5:{s:4:"date";a:2:{s:7:"created";i:1440054292;s:8:"modified";i:1444079393;}s:7:"creator";s:12:"Samuel Pavon";s:4:"user";s:11:"festovalros";s:11:"last_change";b:0;s:11:"contributor";a:2:{s:11:"festovalros";s:12:"Samuel Pavon";s:14:"guachusperquin";s:21:"Marcos Rubén García";}}}

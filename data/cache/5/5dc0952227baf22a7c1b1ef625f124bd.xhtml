@@ -1,0 +1,26 @@
+
+<p>
+Para adaptar tryton a la lógica Contable y Fiscal de Venezuela seria necesario desarrollar un modulo de localización venezolana el cual seria una modificación del modulo <code>account</code>, por convención los módulos de localización de tryton se les agrega un sufijo de las siglas del país luego de un guion bajo; ej: account_ve.
+</p>
+
+<p>
+Para la modificación del Modulo bastaría con la edición de los archivos xml que son las plantillas que determinan el volcado a la base de datos y luego de modificadas estas plantillas los scripts necesarios en python para la correcta importación del modulo, los archivos a modificar serian los siguientes:
+</p>
+<ul>
+<li class="level1"><div class="li"> account.xml: esta es plantilla del plan de cuenta contable, aquí agregaríamos todas las cuentas del plan contable que definamos para venezuela con las respectivas clasificaciones de las cuentas según la lógica de tryton, cada cuenta se le define un nombre, un código, una clase, un tipo y la definición de los padres e hijos de la cuenta según la jerarquía. </div>
+</li>
+<li class="level1"><div class="li"> tax.xml: esta es la plantilla de los impuestos, aquí definiríamos el nombre, las regla del impuesto, con cuales cuentas del plan contable estan asociados, el tipo de impuesto, notas de crédito relacionadas, etc </div>
+</li>
+</ul>
+
+<p>
+<a href="https://code.google.com/p/tryton/wiki/HowtoCreateAChartOfAccounts" class="urlextern" title="https://code.google.com/p/tryton/wiki/HowtoCreateAChartOfAccounts"  rel="nofollow">aquí</a> se puede ver en la documentación oficial la estructura completa de los datos para estos archivos xml
+</p>
+
+<p>
+La modificación se facilita mucho si se realiza a partir del código del modulo de localización argentina <code>account_ar</code> ya que el escenario contable y fiscal de argentina es el que mas se asemeja al de Venezuela, ademas de que el código fuente se encuentra publicado en github con los archivos xml intradocumentados por la gente de tryton argentina, lo cual reduciria el trabajo a simplemente crear un fork en github llamado account_ve y realizar las modificaciones correspondientes, luego el modulo se instala con las ordenes de python como cualquier otro modulo en tryton y ya dentro del sistema podríamos trabajar con las plantillas contables venezolanas.
+</p>
+
+<p>
+Otro modulo que se podría modificar para la localización venezolana es el de <code>party_siren</code>, este modulo es parte de los módulos de localización francesa y lo que hace es simplemente añadir un campo de entrada validado en el formulario del modulo identidades cuando se crea una nueva identidad, SIREN es el equivalente francés al numero de RIF venezolano, este modulo se encargaría de validar el numero de RIF de la persona natural o jurídica que se registre en el sistema según el formato de numeración del seniat, de modo que el numero que se registre cuando se crea una identidad nueva en el sistema siempre sea un numero valido y nos permita la correcta facturación.
+</p>

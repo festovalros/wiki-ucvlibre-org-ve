@@ -1,0 +1,78 @@
+====== Gestión Financiera ======
+===== Configuración =====
+==== Configuración de Contabilidad ====
+Permite seleccionar la Cuenta por cobrar por defecto y Cuenta por pagar por defecto, y la Secuencia de Mandato SEPA (//Single Euro Payments Area//). Esta última se define mediante los campos Nombre de Secuencia, Compañía, Prefijo, Sufijo, Tipo (Incremental, Marca de Tiempo Decimal, Marca de Tiempo de tiempo Hexadecimal). Dependiendo del tipo de la secuencia, se configuran los parámetros Dígitos de relleno, Número de incremento y Número siguiente, para el tipo incremental. Para los tipos temporales las opciones son: Redondeo de Marca de Tiempo, Compensación de Marca de Tiempo y Última Marca de Tiempo. \\ 
+Permite definir el redondeo de impuestos, indicando el valor inicial de la secuencia, la compañía y el método, siendo este último, Por Línea o Por Documento.\\ 
+Finalmente, permite configurar el Cupo de Crédito, indicando Valor Límite de Crédito por Defecto, Procedimiento de Cobro por defecto, Libro contable de inventarios, Cuenta equivalente del costo y Secuencia de activo fijo. El procedimiento de cobro se refiere al plazo en días para el vencimiento de crédito.
+
+==== Plan de Cuentas ====
+----
+
+Este módulo permite una configuración del Plan de Cuentas a Utilizar, mucho más completa que el asistente inicial de instalación de plan de cuentas desde plantilla. Las plantillas no serán consideradas en esta sección, puesto que de ellas sólo nos interesa crearlas a partir de nuestras exigencias para, consecuentemente, limitarnos a utilizarlas desde el asistente de instalación.
+=== Tipos de Cuentas ===
+Cada nuevo tipo de cuenta se define mediante los campos Nombre, Secuencia, Compañía, Padre (Indicar tipo superior, si estamos definiendo un subtipo), Mostrar Balance (Deber-Haber o Haber-Deber), y mediante las casillas de verificación Estado de Situación Financiera y Estado de Resultados.
+=== Cuentas ===
+Esta sección contiene los campos Nombre, Código, la casilla de verificación Activo y encontramos las pestañas Información General, Hijos, Diferidos, Notas.
+== Información General ==
+Contiene los campos Compañía, Padre (cuenta padre) Clase (Gastos, Ingresos, Inventarios, Otros, Por Cobrar, Por Pagar, Vista), Tipo de Cuenta, Moneda, Segunda Moneda, y las casillas de verificación Tercero Requerido, Diferido y Conciliar. El Campo Tipo y las dos últimas casillas de verificación no están disponibles para la Clase Vista. Además, es posible predeterminar los impuestos relacionados a esta cuenta.
+== Hijos ==
+Esta pestaña visualiza las cuentas hijas, así como crearlas, con lo cual se despliega nuevamente el mismo módulo Cuentas, dentro del Módulo Cuentas, permitiendo crear una escalera limitada sólo por las capacidades de memoria y procesamiento de datos del procesador, y el ocio del operador.
+== Diferidos ==
+Contiene los campos, Año Fiscal, Débito y Crédito.
+== Notas ==
+La pestaña Notas presenta un sólo campo de texto.
+
+==== Años Fiscales ====
+----
+Un nuevo año fiscal se define mediante los campos Nombre, Código, Fecha Inicial, Fecha Final, Compañía y el campo automático de sólo lectura Estado, el tendrá el valor Abierto, hasta tanto sea cerrado el año fiscal. Adicionalmente contiene las pestañas Períodos, Secuencias y Cuentas de Inventarios.
+=== Períodos ===
+Al crear un nuevo año fiscal, la pestaña Períodos presenta los botones Crear Períodos Mensuales y Crear Períodos Trimestrales, y basta con hacer clic en uno de ellos para crear los 12 o 4 períodos correspondientes. Antes de crear los períodos debe ser configurada la pestaña Secuencias, la cual se muestra seguida de Períodos, porque están ordenadas de forma alfabética, no secuencial.\\ 
+Cada período está definido por los campos Nombre, Código (opcional), Fecha Inicial, Fecha Final, los correspondientes a las secuencias definidas para el año fiscal y Estado. Obviamente, todos estos campos son rellenados de forma automática con el valor correspondiente; el nombre del período será el del año fiscal seguido de un guión y un número secuencial desde 1.\\ 
+Una vez creados los períodos, la pestaña muestra una lista de ellos y el botón Cerrar Año Fiscal. Para cerrar un año fiscal, El balance de la cuenta "Ingresos principal" debe ser cero.
+=== Secuencias ===
+Muestra cuáles serán las secuencias que llevará cada Asiento Contabilizado, Facturas de Cliente, Nota de Crédito de Cliente, Factura de Proveedor y Nota de Crédito de Proveedor y cada una se define de igual forma que la Secuencia de Mandato SEPA, descrita en 
+=== Cuenta e Inventarios ===
+Permite definir el Método de Contabilización de Inventario como Anglosajón, Continental, o Ninguno.
+
+==== Libros Contables ====
+----
+=== Tipos ===
+Se definen mediante los Campos Nombre y Código
+=== Libros Contables ===
+Se definen mediante los campos Nombre, Código, Tipo, Secuencia, Vista, Cuenta Débito por Defecto, Cuenta Crédito por Defecto, y las casillas de verificación Activo y Permitir anular el asiento.
+
+==== Impuestos ====
+=== Grupos de Impuestos ===
+Definidos por Nombre, Código y Clase (Compras, Ventas y Ambos).
+=== Códigos de Impuestos ===
+Definidos por Nombre, Código, Compañía, Padre, y la opción Activo. Despliega una pestaña para listar los Hijos que tuviere, y otra para una Descripción. 
+=== Impuestos ===
+Se define mediante los campos Nombre y Descripción, y las pestañas Información General y Código.
+En la pestaña Información General están los campos Código, Secuencia, Fecha Inicial, Fecha Final, Tipo, Compañía, Cuenta de la Factura y Cuenta Nota de Crédito. El campo Tipo puede tomar los Valores, Fijo, Porcentaje o Ninguno. Dependiendo del valor del campo Tipo, se habilita un campo numérico para especificar el valor del Porcentaje o del monto fijo.
+En la pestaña Código tiene dos secciones: Factura con los campos Código de la Base En Factura y Código del Impuesto en Factura, y la sección Nota de Crédito, con los campos Código de la base en Nota de Crédito y Código del Impuesto en Factura. Cada uno de estos 4 campos tiene asociado un campo Signo que comienza en 1. 
+
+==== Centros de Costos ====
+----
+=== Cuentas Analíticas ===
+Definidas mediante Nombre y Código, y las pestañas Información General y Notas.
+== Información General ==
+Se define mediante los campos Tipo (Normal, Raís o Vista), Mostrar Balance (Deber-Haber o Haber-Deber), Compañía y Moneda. Para los tipos Normal y Vista, además, se muestran los campos Raís y Padre. Muestra una lista de Hijos, desde donde éstos pueden ser creados y, finalmente, el campo Estado (Borrador, Abierto y Cerrado. También muestra una pestaña de notas.
+
+==== Formas de Pago ====
+----
+
+Definido por el campo nombre y la casilla Activo. Contiene las pestañas Líneas y Descripción, este último es un campo de texto.
+=== Líneas ===
+Cada línea está definida por los campos Tipo (Fijo, Porcentaje del Resto, Porcentaje del Total y Saldo), Número de Meses, Mes, Número de Semanas, Día de la Semana, Cantidad de Días, Día del Mes. El Tipo Fijo, presenta adicionalmente los campos Valor y Moneda; los Tipos Porcentaje presentan Porcentaje y Divisor. 
+==== Pagos ====
+----
+Los Libros de Pago se definen mediante los campos Nombre, Compañía, Moneda y Método de Proceso (Manual o Sepa)
+
+
+==== Cobros ====
+----
+Los Procedimientos de Cobro se definen mediante Nombre y Niveles y cada nivel es definido por Secuencia, Días de Vencimiento y las casillas de verificación Imprimir en Carta y Cupo de Crédito.
+
+==== Estados de Cuenta ====
+----
+Los Libros de Estados de Cuenta se definen mediante los campos Nombre, Libro Contable, Moneda, Compañía y Tipo de Validación (Número de Líneas, Saldo y Valor)

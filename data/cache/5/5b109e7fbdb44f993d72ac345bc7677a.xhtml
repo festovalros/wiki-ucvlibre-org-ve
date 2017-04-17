@@ -1,0 +1,162 @@
+
+<h1 class="sectionedit1" id="instalacion_de_tryton">Instalación de Tryton</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT1 SECTION "Instalación de Tryton" [1-37] -->
+<h2 class="sectionedit2" id="pre-requisitos">Pre-Requisitos</h2>
+<div class="level2">
+
+<p>
+probado en:
+</p>
+<ul>
+<li class="level1"><div class="li"> maquina virtual creada en virtualbox de 8gb de disco duro y 1gb de ram</div>
+</li>
+<li class="level1"><div class="li"> Debian 8 jessie 32bits con escritorio lxde</div>
+</li>
+<li class="level1"><div class="li"> sourcelist modificado:</div>
+</li>
+</ul>
+<pre class="code"># deb cdrom:[Debian GNU/Linux 8 _Jessie_ - Official Snapshot amd64 LIVE/INSTALL Binary 20150425-14:07]/ jessie main
+#deb cdrom:[Debian GNU/Linux 8 _Jessie_ - Official Snapshot amd64 LIVE/INSTALL Binary 20150425-14:07]/ jessie main
+
+deb http://ftp.us.debian.org/debian/ jessie main contrib non-free
+deb-src http://ftp.us.debian.org/debian/ jessie main contrib non-free
+
+deb http://security.debian.org/ jessie/updates main contrib non-free
+deb-src http://security.debian.org/ jessie/updates main contrib non-free
+
+# jessie-updates, previously known as &#039;volatile&#039;
+deb http://ftp.us.debian.org/debian/ jessie-updates main
+deb-src http://ftp.us.debian.org/debian/ jessie-updates main
+
+# Backports
+deb http://http.debian.net/debian jessie-backports main
+
+## Multimedia estable (actual)
+deb http://www.deb-multimedia.org stable main non-free
+
+## Firefox
+deb http://mozilla.debian.net/ jessie-backports iceweasel-release</pre>
+<ul>
+<li class="level1"><div class="li"> instalar llaveros de claves pgp de los repositorios non-free agregados en la sourcelist</div>
+</li>
+</ul>
+<pre class="code">sudo apt-get install deb-multimedia-keyring debian-archive-keyring debian-keyring pkg-mozilla-archive-keyring python3-keyring</pre>
+<ul>
+<li class="level1"><div class="li"> actualizar repositorios</div>
+</li>
+</ul>
+<pre class="code">sudo apt-get update</pre>
+
+</div>
+<!-- EDIT2 SECTION "Pre-Requisitos" [38-1462] -->
+<h2 class="sectionedit3" id="instalacion_del_cliente">Instalación del Cliente</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> instalar <code>tryton-client</code> <em>paso opcional ya que no se necesita un cliente en la misma instalación del servidor, la instalación del cliente dependerá del sistema operativo en el que se instale</em></div>
+</li>
+</ul>
+<pre class="code">sudo apt-get install tryton-client</pre>
+
+</div>
+<!-- EDIT3 SECTION "Instalación del Cliente" [1463-1742] -->
+<h2 class="sectionedit4" id="instalacion_del_servidor">Instalación del Servidor</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> instalar <code>tryton-server</code>, la version actual en los repositorios oficiales de debian jessie es la 3.4.0-3.</div>
+</li>
+</ul>
+<pre class="code">sudo apt-get install tryton-server</pre>
+<ul>
+<li class="level1"><div class="li"> instalar todos los modulos disponibles en los repositorios oficiales.</div>
+</li>
+</ul>
+<pre class="code">sudo apt-get install tryton-modules-all</pre>
+
+</div>
+<!-- EDIT4 SECTION "Instalación del Servidor" [1743-2053] -->
+<h3 class="sectionedit5" id="configuracion_del_servidor">Configuración del servidor</h3>
+<div class="level3">
+
+</div>
+
+<h5 id="configuracion_de_la_base_de_datos">Configuración de la base de datos</h5>
+<div class="level5">
+
+<p>
+Lo primero es comprobar que el motor de base de datos se ha instalado y se está ejecutando correctamente:
+</p>
+<pre class="code">sudo /etc/init.d/postgresql* restart</pre>
+
+<p>
+lo que devolverá la siguiente salida si todo esta correcto
+</p>
+<pre class="code">[ ok ] Restarting Postgresql (via systemctl): postgresql.service </pre>
+
+<p>
+Ahora crearemos el usuario de la BD (en este caso se crea el usurrio de nombre tryton), con el siguiente comando, que nos pedirá una clave (aqui se coloca una clave que luego tiene que coincidir con la clave en /etc/tryton/trytond.conf):
+</p>
+<pre class="code">sudo su - postgres -c &quot;createuser --createdb --no-createrole --no-superuser --pwprompt tryton&quot;;</pre>
+
+<p>
+Si queremos, podemos crear una BD y dejarla lista para usar, aunque también se puede hacer desde el cliente.
+</p>
+
+<p>
+Para ello tendremos que dar además del nombre, la contraseña del ususario admin (aquí también he puesto ‘admin’).
+</p>
+<pre class="code">sudo su - postgres -c &quot;createdb --encoding=UNICODE --owner=tryton tryton&quot;;
+sudo /usr/bin/trytond -i all -d tryton</pre>
+
+</div>
+
+<h5 id="configuracion_del_trytondconf">Configuración del trytond.conf</h5>
+<div class="level5">
+
+<p>
+Editamos el archivo <code>/etc/tryton/trytond.conf</code> y agregamos la siguiente linea en la seccion <code>database</code>
+</p>
+<pre class="code">[database]
+uri = postgresql://usuario:password@localhost:5432/
+path = /var/lib/tryton
+list = True</pre>
+
+<p>
+donde usuario y password tiene que ser reemplazado por el usuario y password de la base de datos previamente creado en la sección anterior y el path sera la directorio donde se guardaran los archivos (carpeta por defecto), la ultima linea <code>list = True</code> permitirá que el cliente pueda listar las bases de datos que se encuentran creadas en el servidor y poder elegir a cual conectarse por medio de un listado.
+</p>
+
+<p>
+luego en la seccion <code>jsonrpc</code> agregamos la siguientes lineas
+</p>
+<pre class="code">localhost:8000
+listen = 0.0.0.0:8000</pre>
+
+<p>
+si queremos que nuestro servidor solo escuche un cliente instalado en el mismo equipo del servidor solo colacaremos la primera linea <code>localhost:8000</code> la segunda linea permite que el servidor escuche a cualquier equipo dentro del área local, ambas escuchas por el puerto 8000.
+</p>
+
+<p>
+Para que el servidor permita crear la base de datos directamente desde el cliente debemos generar una contraseña ejecutando en consola el siguiente comando:
+</p>
+<pre class="code">python -c &#039;import getpass,crypt,random,string; print crypt.crypt(getpass.getpass(), &quot;&quot;.join(random.sample(string.ascii_letters + string.digits, 8)))&#039;</pre>
+
+<p>
+al ejecutarlo nos pedirá que introduzcamos una contraseña, luego de introducir la contraseña nos mostrara una huella que sera la que debamos introducir en el archivo trytond.conf, en este ejemplo supondremos que luego de introducir la contraseña nos generara la siguiente huella: ASfdrfv.rT entonces en la seccion <code>session</code> del trytond.conf agregaremos la siguiente linea.
+</p>
+<pre class="code">[session]
+super_pwd = ASfdrfv.rT</pre>
+
+<p>
+Por ultimo reiniciamos el servidor para que arranque con los nuevos cambios
+</p>
+<pre class="code">sudo /etc/init.d/tryton-server restart</pre>
+
+<p>
+lo que devolverá la siguiente salida
+</p>
+<pre class="code">[ok] restarting tryton-server (via systemctl): tryton-server.service</pre>
+
+</div>
+<!-- EDIT5 SECTION "Configuración del servidor" [2054-] -->

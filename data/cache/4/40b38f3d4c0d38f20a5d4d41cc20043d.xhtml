@@ -1,0 +1,188 @@
+
+<p>
+<em>Nota: esta guía se sustenta bajo el supuesto de un sistema tryton ya pre-configurado por un administrador del sistema con una base de datos creada, los módulos necesarios ya instalados y un plan de cuentas previamente cargado, cuando iniciamos una base de datos nueva se nos ejecutara un asistente en donde podremos definir estos parámetros por primera vez, para este tipo de configuración ver <a href="/ucvlibrewiki/doku.php?id=proyectos:tryton:implementacion" class="wikilink1" title="proyectos:tryton:implementacion">Implementación</a></em>
+</p>
+
+<p>
+Para tener andando los procesos básicos de una empresa (facturación de compras y ventas, administración y contabilidad) bajo la lógica de tryton es necesario la  incorporación de ciertos datos de identificación y la configuración de una serie de parámetros, a lo cual para efectos de esta guía llamaradas <strong>configuración mínima</strong>
+</p>
+
+<p>
+Para la <strong>configuración mínima</strong> de tryton necesitaremos definir las siguientes configuraciones:
+</p>
+
+<h1 class="sectionedit1" id="usuarios">Usuarios</h1>
+<div class="level1">
+
+<p>
+para acceder al sistema desde el cliente se necesita estar logueado con un nombre de usuario y contraseña, estos usuarios estarán asociados a los permisos correspondiente para modificar y ver diferentes sectores del sistema, en el momento de la creación de la base de datos, se crea un usuario admin el cual tiene la administración total del sistema y los permisos para poder crear nuevos usuarios y asignarles permisos específicos para las diferentes instancias del sistema tryton. La creación de los usuarios y su asignación de permisos solo la pueden realizar usuarios que tengan permisos de administración sobre el sistema tryton,de forma ideal esta configuración se hace al momento de la instalacion del servidor por el personal tecnico.
+</p>
+
+</div>
+<!-- EDIT1 SECTION "Usuarios" [900-1674] -->
+<h1 class="sectionedit2" id="terceros">Terceros</h1>
+<div class="level1">
+
+<p>
+Un tercero puede ser un cliente, un proveedor, una persona física o jurídica, una entidad, una fundación, etc. Aquí registraremos cualquier contacto relacionado con nuestra empresa, incluida esta misma y sus empleados.
+</p>
+
+<p>
+Para poder facturar es necesario que al menos tengamos registrados en terceros nuestra empresa y luego de creada definir que es nuestra (para que pueda ser vista como nuestra empresa en el resto de los modulos, por ejemplo en el modulo de contabilidad) luego de esto registrar un cliente o proveedor.
+</p>
+
+<p>
+Para crear un tercero simplemente debemos introducir un Nombre para identificarlo, también podremos indicar las Direcciones de un tercero, y sus Medios de contacto.También podemos clasificarlos por Categorías y asi organizarlos con la preferencias que tengamos.
+</p>
+
+<p>
+En la pestaña Contabilidad, se puede definir Cuenta a pagar y la Cuenta a cobrar que se utilizarán cómo cuentas a cobrar/pagar por defecto en las facturas relacionadas con el tercero. Ademas podremos definir la Regla de impuesto de cliente y la Regla de impuesto de proveedor, para especificar una regla de impuestos que se aplique al tercero. 
+</p>
+
+<p>
+Podremos introducir la información bancaria del tercero en el campo Cuentas bancarias.
+</p>
+
+</div>
+<!-- EDIT2 SECTION "Terceros" [1675-2928] -->
+<h1 class="sectionedit3" id="productos">Productos</h1>
+<div class="level1">
+
+<p>
+El concepto de producto en Tryton está compuesto de dos modelos: la plantilla de producto y el producto. Esta separación se usa para poder definir variantes de un producto (por ejemplo: tallas, colores…) definiendo los datos compartidos en la plantilla y los específicos en el producto.
+</p>
+
+<p>
+Para crear un producto primero deberemos crear una plantilla desde la opción Productos, especificando cómo mínimo su Nombre, su Tipo, el Precio de venta el Precio de coste, el Método de coste y su unidad de medida por defecto. Además podremos especificarle una Categoría para clasificarlo.
+</p>
+
+<p>
+El Tipo puede ser una de las siguientes opciones:Articulo fijo, Articulo, Servicios
+</p>
+
+<p>
+Si seleccionamos el tipo Bienes, nos aparecerá el campo Consumible, que debemos marcar si queremos que se controlen el número de existencias de nuestro producto.
+</p>
+
+</div>
+<!-- EDIT3 SECTION "Productos" [2929-3794] -->
+<h1 class="sectionedit4" id="plan_contable">Plan contable</h1>
+<div class="level1">
+
+<p>
+Para poder facturar en el sistema y estén disponibles todas las funciones contables necesitaremos tener cargado un plan de cuentas, la plantilla del plan de cuentas a usar esta definida en el proceso de instalación del sistema y no debería necesitar interacción alguna con el usuario final para su correcto funcionamiento si embargo el empleado encargado de la contabilidad podría necesitar hacer algunos ajustes a la plantilla del plan contable. Para las características avanzadas del modulo contabilidad ver <a href="/ucvlibrewiki/doku.php?id=proyectos:tryton:implementacion:gestion_financiera" class="wikilink1" title="proyectos:tryton:implementacion:gestion_financiera">Gestión Financiera</a>
+</p>
+
+</div>
+<!-- EDIT4 SECTION "Plan contable" [3795-4414] -->
+<h1 class="sectionedit5" id="ejercicio_fiscal">Ejercicio Fiscal</h1>
+<div class="level1">
+
+<p>
+Para que se registren los montos de la facturas en las cuentas del plan contable se necesita definir el ejercicio fiscal para ello nos dirigimos al apartado <code>años fiscales</code> que se encuentra en la ruta gestión financiera&gt;configuración&gt;años fiscales, allí le asignaremos un nombre el año fiscal, una fecha de inicio y cierre y el nombre de la compañía. También sera necesario crear las secuencias correspondientes al ejercicio fiscal,en la pestaña secuencias de esa misma pantalla podremos crear las secuencias asignandoles un nombre y dejando los demás datos como están por defecto. Adicionalmente también podremos crear periodos del ejercicio fiscal que pueden ser mensuales o trimestrales podemos escoger entre alguna de las dos opciones en las pestaña <code>periodos</code>
+crear periodos mensuales o trimestrales.
+</p>
+
+</div>
+<!-- EDIT5 SECTION "Ejercicio Fiscal" [4415-5270] -->
+<h1 class="sectionedit6" id="termino_de_pago">Termino de pago</h1>
+<div class="level1">
+
+<p>
+Para poder facturar se necesita de la existencia de al menos un termino de pago. Podemos crear un método de pago en el apartado <code>forma de pago</code> lo encontramos en <code>gestión financiera&gt;configuración&gt;formas de pago</code>, aquí crearemos por ejemplo la forma de pago <code>efectivo</code>, hacemos click en crear nuevo registro e introduciremos en nombre “efectivo” luego ponemos en tipo <code>saldo</code> lo demás lo dejamos con los valores por defecto y guardamos el registro.
+</p>
+
+</div>
+<!-- EDIT6 SECTION "Termino de pago" [5271-5763] -->
+<h1 class="sectionedit7" id="facturacion">Facturación</h1>
+<div class="level1">
+
+<p>
+Luego de cumplir con los requisitos anteriores podremos generar nuestra primera factura de venta, iremos a <code>Gestión de ventas&gt;Ventas</code> estando en la primera pestaña borrador haremos click en agregar nuevo registro.
+</p>
+
+</div>
+<!-- EDIT7 SECTION "Facturación" [5764-6009] -->
+<h2 class="sectionedit8" id="crear_una_nueva_venta">Crear una nueva venta</h2>
+<div class="level2">
+
+<p>
+Lo primero que debemos introducir es el Tercero, pudiendo seleccionar uno existente o crear uno de nuevo directamente desde la venta. Una vez seleccionado el Tercero nos rellenara los datos que conozca del cliente, cómo por ejemplo la Dirección de facturación, la Dirección de envío o el Plazo de pago.
+</p>
+
+<p>
+Después podemos introducir la líneas, introduciendo una para cada Producto (que previamente habremos creado en EL apartado productos) que queremos presupuestar o vender. Una vez seleccionado el producto introducimos la Cantidad y podemos guardar la línea.
+</p>
+
+<p>
+Mediante el campo Tipo, podremos definir distintos tipos de línea. El valor por defecto es Línea, lo que significa que esta línea de pedido de venta contiene los campos mencionados anteriormente. Los otros valores son Comentario, Subtotal y Título que se utilizan para añadir líneas extras que aparecerán en el informe permitiendo de esta forma una personalización más sencilla.
+</p>
+
+<p>
+Establecer un producto en un línea del pedido de venta es opcional, de todos modos, si queremos que estos productos sean contabilizados de los depósitos, deberemos seleccionar forzosamente un producto que no sea de tipo servicio.
+</p>
+
+</div>
+<!-- EDIT8 SECTION "Crear una nueva venta" [6010-7235] -->
+<h2 class="sectionedit9" id="flujo_de_ventas">Flujo de ventas</h2>
+<div class="level2">
+
+<p>
+En la parte inferior izquierda podremos observar en todo momento en qué estado se encuentra la venta. Los pasos básicos son los siguientes y siguen este orden:
+</p>
+
+<p>
+Borrador &gt; Cotización &gt; Confirmado &gt; En proceso &gt; Realizada
+Mientras estamos introduciendo los datos de la venta, ésta se mantendrá en estado borrador. De esta forma podemos guardarla y continuar en otro momento y se mantendrá así hasta que pulsemos el botón Presupuesto momento en el cual pasará al siguiente estado y se rellenará el campo Referencia con el número de venta que se mantendrá tanto para el presupuesto como para el pedido así como para hacer todo el seguimiento posterior.
+</p>
+
+<p>
+A continuación se detallan los pasos que pasa un pedido de venta:
+</p>
+
+<p>
+Borrador: Representa aquellas ventas que aún no se han terminado de definir.
+Presupuesto: Ventas sobre las que hemos presentado un presupuesto al cliente pero aún no tenemos respuesta.
+Confirmado: El cliente nos ha confirmado la venta, pero aún no se ha iniciado la preparación de la misma.
+En proceso: Se pasa al departamento de almacén y producción. A partir de este momento el sistema ya conoce de la necesidad de servir el producto y puede empezar a planificar producciones y compras si son necesarias.
+Realizada: Todos los albaranes y facturas relacionados con una venta se han generado correctamente.
+Cancelado: Ventas que han sido canceladas antes de confirmar-se. Típicamente se tratará de presupuestos no aprobados por el cliente.
+Nota: Hay que tener en cuenta, que una vez confirmadas las ventas, estas ya no podrán ser modificadas.
+Además también podemos saber el estado de las facturas relacionadas mediante el campo Estado factura y el estado de las notas de envió relacionados mediante el campo Estado envío. Los posibles estados son:
+</p>
+
+</div>
+<!-- EDIT9 SECTION "Flujo de ventas" [7236-9059] -->
+<h3 class="sectionedit10" id="estados_de_factura">Estados de factura</h3>
+<div class="level3">
+
+<p>
+Ninguno: Todavía no se ha generado ninguna factura relacionada con esta venta.
+En espera: Se han generado las facturas pero estas en espera de ser pagadas.
+Pagada: Todas las facturas relacionadas con esta venta han sido pagadas.
+Excepción: El sistema había generado una factura pero un usuario ha cancelado la factura. En el apartado Gestión de excepciones se detalla cómo corregir este estado.
+</p>
+
+</div>
+<!-- EDIT10 SECTION "Estados de factura" [9060-9490] -->
+<h3 class="sectionedit11" id="devolucion_de_la_venta">Devolución de la venta</h3>
+<div class="level3">
+
+<p>
+En el caso de realizar una venta, se ha procesado y finalmente se debe abortar la entrega dispone de un asistente en el menú de acciones para hacer para hacer una devolución de la venta.
+</p>
+
+<p>
+La acción devolución de la venta simplemente creará una nueva copia de la venta origen pero con la diferencia que las cantidades de las líneas serán ahora en negativo.
+</p>
+
+<p>
+Si las cantidades de las líneas de la venta son en negativo, en el momento de procesar el albarán en vez de crear un albarán de cliente, se creará un albarán de abono de cliente y en el momento de generar la factura en vez de crear una factura de cliente se creará un abono.
+</p>
+
+<p>
+Nota Se pueden mezclar lineas con cantidades positivas y negativas en una misma venta. En este caso, se generaran albaranes y facturas para las líneas con cantidades positivas y albaranes de devolución y abonos para las negativas.
+</p>
+
+</div>
+<!-- EDIT11 SECTION "Devolución de la venta" [9491-] -->

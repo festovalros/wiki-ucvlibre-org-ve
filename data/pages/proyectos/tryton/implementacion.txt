@@ -1,0 +1,55 @@
+====== Implementación ======
+
+Realizada ya la [[proyectos:tryton:instalacion|Instalación de Tryton]] y configurados su Cliente y Servidor, lo primero a realizar es la creación de usuarios mediante el asistente inicial.
+
+===== Asistente de Instalación =====
+Al iniciar el cliente por primera vez, luego de creada la base de datos desde el cliente, ([[proyectos:tryton:instalacion|Instalación de Tryton]]) se iniciará el asistente de configuración, quien nos guiará paso a paso en la configuración inicial del sistema.
+==== Creación de usuarios ====
+Nos solicita llenar los campos ''Nombre'' (presuntamente nombre para mostrar), ''Nombre de Usuario'' (presuntamente para uso del sistema, al parecer aceptó caracteres acentuados, espacios y distingue mayúsculas de minúsculas), ''Contraseña'' y ''Correo Electrónico''\\ 
+Adicionalmente, podemos darle atributos al usuario mediante las pestañas:
+  - Acción (Falta detalle)
+  - Permisos de Acceso (Falta detalle)
+  - Preferencias (Falta detalle)
+Podemos elegir tantos usuarios como queramos haciendo clic en ''Añadir'', con lo que la información quedará guardada y el formulario se limpiará para cargar un usuario nuevo. Al agregar la cantidad deseada de usuarios, hacemos clic en ''Finalizar'', luego en ''Siguiente'', con lo que el asistente nos dirá que hemos terminado la configuración inicial, y nos despedimos de él haciendo clic en ''Finalizar''.
+
+===== Instalación y Actualización de Módulos =====
+A este punto sólo está instalado el módulo de Administración, con el cual podremos crear más usuarios, crear grupos, entre otras cosas, pero, más recomendable es instalar en el sistema todos los módulos que hemos instalado en nuestro sistema operativo. Para ello, basta con hacer clic en el primer módulo de la lista que presenta el módulo Módulos (xD) y presionamos la tecla Enter. Por alguna razón necia, para uno o dos módulos, esto no funciona, así que hay que revisar que todos los módulos estén pendientes por instalar o actualizar, según sea el caso. Constatado el correcto estado para la totalidad de los módulos, hacemos clic en el botón Acción y seleccionamos la opción ''Realizar las Instalaciones/Actualizaciones Pendientes'' con lo que aparecerá una ventana de verificación, donde clicqueamos ''Iniciar Mejora'' Esto tardará algunos minutos (3 minutos con un procesador I3, 2Gb de RAM y Debian 8 64 bit). Al hacer clic en Finalizar, iniciará atomáticamente el asistente de configuración de los módulos que acabamos de Instalar o Actualizar.
+
+===== Configuración de los Módulos =====
+El primer formulario que nos aparecerá es el llamado Compañías.
+==== Registro de Compañía ====
+El campo nombre no puede ser rellenado de manera directa, al comenzar a escribir, nos aparecerán las opciones //''buscar''// y //''crear''// como no hemos creado nada aún, no hay nada qué buscar; hacemos clic en crear y se abrirá el formulario Terceros. Si hacemos clic en el botón ''Buscar'' que está dentro del campo Nombre, nos aparecerá el formulario Buscar, que está vacío, hacemos clic en ''Nuevo'' y llegamos nuevamente al formulario Terceros.\\ 
+Adicionalmente, este formulario solicita indicar obligatoriamente la moneda con que trabaja dicha compañía, y brinda la opción de indicar su zona horaria. Al crear nuestra compañía como un tercero y cerrar ese formulario, regresaremos a éste, donde seleccionaremos nuestra compañía recién creada y, luego de completar el resto de la información, podremos continuar con el asistente, que nos guiará en la creación de un plan de cuentas desde una plantilla. (detallar el contenido de las pestañas).\\ 
+También podremos agregar una lista de los empleados, pero, es recomendable dejar esto para después de crear el plan de cuentas, porque así podremos crear las asociaciones contables con el personal de la empresa.
+=== Terceros ===
+  - Nombre de la compañía
+  - El campo Código es un valor interno de Tryton generado automáticamente al finalizar el registro.
+  - RIF de la compañía (SIREN).
+  - el único campo obligatorio en este formulario, es Nombre. 
+El formulario tiene varias pestañas:
+  - General: contiene un subformulario para cargar información de tantos contactos para el Tercero como sea necesario, y a cada contacto creado podrá adicionársele tantos medios de contacto como éste disponga.
+  - Contabilidad: Mandarín básico.
+  - Existencias:
+  - Cuentas Bancarias: se pueden crear tantas como sea necesario.
+  - Relaciones:
+  - Venta: permite elegir métodos de agrupación para las facturas y para despacho de venta.
+
+En este módulo de Terceros, podemos crear todas las compañías que queramos, de las cuales, algunas podrán ser señaladas como principales y se les asociará un Plan de Cuentas, o podrán luego ser clasificadas como clientes, proveedores o de la forma que corresponda.
+
+==== Plan de Cuentas ====
+El asistente de configuración de módulos nos llevará a crear un Plan de Cuentas desde Plantilla para nuestra empresa, elegida de las que creadas en el paso anterior. Para el campo Compañía, elegimos la que corresponda a la nuestra, y en el campo Plantilla de Cuenta, elegimos el que deseemos. Aquí debería aparecer la Plantilla de Plan de Cuentas desarrollada por Micorp. Hechas las selecciones, hacemos clic en Crear.\\ 
+En el siguiente paso debemos indicar cuáles serán las Cuentas por Cobrar y por Pagar predeterminadas, haciendo clic en //Buscar// y seleccionando la cuenta correspondiente a cada caso. Seleccionadas las cuentas, Hacemos nuevo clic en el botón crear y con esto, habremos culminado la instalación básica mediante asistente. Cabe destacar que toda esta configuración, y con mayor detalle incluso, puede ser realizada sin el asistente, desde el módulo correspondiente.\\ 
+
+
+
+
+
+
+
+===== Venezolanización de Tryton =====
+==== Cambio de Variables ====
+  * SIREN: Es equivalente al RIF. Es la manera como se denomina en Francia al NIF o VAT Number Es el número de registro comercial de compañías que operan en Francia, un ejemplo de número SIREN es: RCS PARIS 453 983 245.
+
+==== Valores que deben ser establecidos por defecto para Venezuela ====
+  - Moneda
+  - Zona Horaria

@@ -1,0 +1,12 @@
+====== Objeto de la Empresa ======
+
+El objeto principal de la compañía consiste en el ejercicio de las actividades que a continuación se enumeran y cualesquiera otras compatibles o conexas con ellas, así como de realizar el comercio en cualquier forma permitida por la Ley. En consecuencia, las actividades principales son: a) desarrollo e implementación de software en todas sus fases, así como complementos y herramientas, todo bajo plataformas libres; b) creación de sistemas y herramientas de gestión para todo tipo de empresas, instituciones y organismos del Estado; c) desarrollo de portales de Internet y software Web en general; d) importación, exportación, distribución, diseño, construcción, comercialización, consignación, instalación, mantenimiento, reparación y soporte de equipos de computación y comunicación, artículos relacionados, partes y accesorios; así como software de terceros bajo plataformas libres; e) realizar actividades y eventos formativos en Tecnologías Libres, así como la elaboración y edición de material educativo, instructivos, actividades de promoción y publicidad asociados; f) diseño de plataformas educativas y módulos de formación en Software Libre y metodologías ágiles de desarrollo de software y material didáctico necesario; g) asimismo, será también objeto de la compañía cualquier otra actividad de lícito comercio que fuere acordado por la Asamblea de Accionistas, previa participación correspondiente al Registro Mercantil; h) promover la constitución de sociedades civiles, mercantiles o de cualquier otra naturaleza y suscribir acciones, cuotas, intereses o participaciones en sociedades, empresas y negociaciones que faciliten sus operaciones, fines y objetos.
+====== Actas Constitutivas de ejemplo ======
+
+{{:ucvlibre:estructura:acta_constitutiva_de_audio_filo_c.a..pdf|}}
+
+{{:ucvlibre:estructura:acta_constitutiva_de_merequetengue_estudios_c.a..pdf|}}
+
+====== Nombre ya apartado en el Registro ======
+
+  * EMPERO C.A.

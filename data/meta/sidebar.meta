@@ -1,0 +1,31 @@
+a:2:{s:7:"current";a:9:{s:4:"date";a:2:{s:7:"created";i:1438065741;s:8:"modified";i:1444590026;}s:7:"creator";s:12:"Samuel Pavon";s:4:"user";s:11:"festovalros";s:11:"last_change";a:7:{s:4:"date";i:1444590026;s:2:"ip";s:13:"186.14.38.222";s:4:"type";s:1:"E";s:2:"id";s:7:"sidebar";s:4:"user";s:12:"wilmeragsucv";s:3:"sum";s:14:"[Alejandría] ";s:5:"extra";s:0:"";}s:11:"contributor";a:3:{s:11:"festovalros";s:12:"Samuel Pavon";s:14:"guachusperquin";s:21:"Marcos Rubén García";s:12:"wilmeragsucv";s:6:"Wilmer";}s:5:"title";s:8:"UCVLibre";s:11:"description";a:2:{s:15:"tableofcontents";a:5:{i:0;a:4:{s:3:"hid";s:8:"ucvlibre";s:5:"title";s:8:"UCVLibre";s:4:"type";s:2:"ul";s:5:"level";i:1;}i:1;a:4:{s:3:"hid";s:20:"estructura_ucv-libre";s:5:"title";s:20:"Estructura UCV-Libre";s:4:"type";s:2:"ul";s:5:"level";i:2;}i:2;a:4:{s:3:"hid";s:9:"proyectos";s:5:"title";s:9:"Proyectos";s:4:"type";s:2:"ul";s:5:"level";i:2;}i:3;a:4:{s:3:"hid";s:10:"alejandria";s:5:"title";s:11:"Alejandría";s:4:"type";s:2:"ul";s:5:"level";i:2;}i:4;a:4:{s:3:"hid";s:7:"eventos";s:5:"title";s:7:"Eventos";s:4:"type";s:2:"ul";s:5:"level";i:2;}}s:8:"abstract";s:513:"UCVLibre
+
+Estructura UCV-Libre
+
+	*  Manifiesto
+	*  Ingreso
+	*  Grupo de Extensión Universitaria
+	*  Fundación
+	*  Compañía Anónima
+
+Proyectos
+
+	*  Ararauna GNU/Linux
+		*  Migración de la UCV
+
+	*  Tryton
+		*  Instalación
+		*  Implementación
+		*  Guia de inicio rápido
+		*  Modulo localizacion Venezuela
+			*  Gestión Financiera
+				*  Facturas
+				*  Asientos
+				*  Pagos
+				*  Plan de Cuentas
+				*  Cobros
+				*  Estados de Cuenta
+				*  Activos Fijos
+				*  Procesos
+				*  Informes
+				*  Impues…";}s:8:"relation";a:2:{s:10:"references";a:63:{s:21:"estructura:manifiesto";b:0;s:18:"estructura:ingreso";b:0;s:43:"estructura:grupo_de_extension_universitaria";b:0;s:20:"estructura:fundacion";b:0;s:27:"estructura:compania_anonima";b:1;s:37:"proyectos:ararauna:ararauna_gnu_linux";b:0;s:38:"proyectos:ararauna:migracion_de_la_ucv";b:0;s:23:"proyectos:tryton:tryton";b:0;s:28:"proyectos:tryton:instalacion";b:1;s:31:"proyectos:tryton:implementacion";b:1;s:38:"proyectos:tryton:guia_de_inicio_rapido";b:1;s:61:"proyectos:tryton:implementacion:modulo_localizacion_venezuela";b:1;s:50:"proyectos:tryton:implementacion:gestion_financiera";b:1;s:40:"proyectos:tryton:implementacion:facturas";b:1;s:40:"proyectos:tryton:implementacion:asientos";b:0;s:37:"proyectos:tryton:implementacion:pagos";b:0;s:47:"proyectos:tryton:implementacion:plan_de_cuentas";b:0;s:38:"proyectos:tryton:implementacion:cobros";b:0;s:49:"proyectos:tryton:implementacion:estados_de_cuenta";b:0;s:45:"proyectos:tryton:implementacion:activos_fijos";b:0;s:40:"proyectos:tryton:implementacion:procesos";b:0;s:40:"proyectos:tryton:implementacion:informes";b:0;s:26:"proyectos:tryton:impuestos";b:1;s:41:"proyectos:tryton:erp_contable_y_derivados";b:0;s:26:"proyectos:tryton:diagramas";b:1;s:30:"proyectos:tryton:micorp:micorp";b:0;s:40:"proyectos:tryton:micorp:comercializacion";b:1;s:36:"proyectos:tryton:micorp:contabilidad";b:1;s:25:"proyectos:redmine:redmine";b:0;s:28:"proyectos:gnuhealt:gnuhealth";b:1;s:41:"proyectos:macizo_guayanes:macizo_guayanes";b:1;s:66:"proyectos:macizo_guayanes:diseno_ilustracion_y_edicion_de_imagenes";b:0;s:35:"proyectos:macizo_guayanes:ofimatica";b:0;s:62:"proyectos:macizo_guayanes:administracion_de_sistemas_gnu_linux";b:0;s:21:"alejandria:alejandria";b:1;s:32:"alejandria:propiedad_intelectual";b:0;s:30:"alejandria:gnu_linux:gnu_linux";b:1;s:29:"alejandria:gnu_linux:historia";b:0;s:32:"alejandria:gnu_linux:instalacion";b:0;s:35:"alejandria:gnu_linux:administracion";b:0;s:23:"alejandria:programacion";b:0;s:25:"alejandria:programacion:r";b:0;s:30:"alejandria:programacion:python";b:0;s:27:"alejandria:programacion:php";b:0;s:25:"alejandria:bases_de_datos";b:0;s:34:"alejandria:bases_de_datos:postgres";b:0;s:32:"alejandria:bases_de_datos:ora2pg";b:0;s:31:"alejandria:diseno_e_ilustracion";b:0;s:67:"alejandria:diseno_e_ilustracion:gnu_image_manipulation_program_gimp";b:0;s:40:"alejandria:diseno_e_ilustracion:inkscape";b:0;s:39:"alejandria:diseno_e_ilustracion:blender";b:0;s:37:"alejandria:diseno_e_ilustracion:krita";b:0;s:41:"alejandria:diseno_e_ilustracion:darktable";b:0;s:20:"alejandria:ofimatica";b:0;s:23:"alejandria:contabilidad";b:0;s:19:"alejandria:dokuwiki";b:0;s:21:"eventos:flisol:flisol";b:0;s:72:"eventos:simposio_venezolano_de_software_libre:simposio_de_software_libre";b:0;s:57:"eventos:simposio_venezolano_de_software_libre:computacion";b:0;s:73:"eventos:simposio_venezolano_de_software_libre:administracion_y_contaduria";b:0;s:53:"eventos:simposio_venezolano_de_software_libre:derecho";b:0;s:66:"eventos:simposio_venezolano_de_software_libre:letras_y_humanidades";b:0;s:73:"eventos:simposio_venezolano_de_software_libre:ilustracion_imagen_y_diseno";b:0;}s:10:"firstimage";s:0:"";}s:8:"internal";a:2:{s:5:"cache";b:1;s:3:"toc";b:1;}}s:10:"persistent";a:5:{s:4:"date";a:2:{s:7:"created";i:1438065741;s:8:"modified";i:1444590026;}s:7:"creator";s:12:"Samuel Pavon";s:4:"user";s:11:"festovalros";s:11:"last_change";a:7:{s:4:"date";i:1444590026;s:2:"ip";s:13:"186.14.38.222";s:4:"type";s:1:"E";s:2:"id";s:7:"sidebar";s:4:"user";s:12:"wilmeragsucv";s:3:"sum";s:14:"[Alejandría] ";s:5:"extra";s:0:"";}s:11:"contributor";a:3:{s:11:"festovalros";s:12:"Samuel Pavon";s:14:"guachusperquin";s:21:"Marcos Rubén García";s:12:"wilmeragsucv";s:6:"Wilmer";}}}

@@ -1,0 +1,4 @@
+====== Banco de paginas especializadas en SL ======
+
+  * [[http://www.muylinux.com|Muy Linux]]
+  * [[http://www.linuxadictos.com|Linux adictos]]

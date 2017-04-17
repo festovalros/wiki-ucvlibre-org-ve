@@ -1,0 +1,39 @@
+====== Contabilidad ======
+Es el registro sistemático de cada movimiento y planificación de movimiento de dinero, dentro de una empresa, y se reglamenta en función del Sistema de Partida Doble.
+
+===== Definiciones =====
+==== Entidades ====
+Para la contabilidad, las entidades existentes, con capacidad para relacionarse entre sí, son definidas mediante un Nombre, Dirección Fiscal y número de Registro de Información Fiscal RIF.
+==== Año Fiscal ====
+El año fiscal comienza cada primero de enero, y culmina el 31 de diciembre de ese mismo año. al finalizar el año fiscal, debe ser realizada la declaración en un período no mayor a 90 días consecutivos.
+==== Ejercicio Económico ====
+El Ejercicio Económico es un período de 12 meses consecutivos, cuyo inicio está definido en el acta constitutiva de la empresa, el cual puede ser cualquier día. Sin embargo, los procesos contables se ven simplificados cuando el ejercicio económico coincide con el año fiscal.
+==== Cuentas ====
+[[https://es.wikipedia.org/wiki/Cuenta|Cuenta, o rubro]] es el elemento básico y central en la contabilidad y en los servicios de pagos. También es la mínima unidad contable capaz de resumir un hecho económico. La cuenta contable es la representación valorada en unidades monetarias de cada uno de los elementos que componen el patrimonio de una empresa (bienes, derechos y obligaciones) y del resultado de la misma (ingresos y gastos), permite el seguimiento de la evolución de los elementos en el tiempo. Por lo tanto, hay tantas cuentas como elementos patrimoniales que tenga la empresa y, en consecuencia, el conjunto de cuentas de una empresa supone una representación completa del patrimonio y del resultado (beneficios o pérdidas) de la empresa.\\ \\ 
+Las transacciones económicas se recogen en la contabilidad a través de las variaciones en el valor de las distintas cuentas, facilitando el registro de las operaciones contables en los libros de contabilidad. Cada cuenta se configura por un título que hace referencia al elemento que representa, un código numérico que la identifica y un valor de la misma, gráficamente se representan como una T, que recoge las anotaciones o movimientos de la cuenta, donde a la parte izquierda de la T, se llama "débito" o "debe" y a la parte derecha "crédito" o "haber", sin que estos términos tengan ningún otro significado más que el indicar una pura situación física dentro de la cuenta.
+=== Terminología ===
+En relación con las cuentas, se suelen utilizar los siguientes términos:
+  * Cargar, adeudar o debitar: registrar un valor en el debe de una cuenta.
+  * Abonar, acreditar o datar: registrar un valor en el haber de una cuenta.
+  * Saldo: diferencia entre la suma de los importes registrados en el debe y los registrados en el haber de una determinada cuenta. La cuenta puede tener:
+     * saldo deudor, cuando la suma de los valores registrados en su debe es mayor que la de los registrados en su haber (D > H);
+     * saldo acreedor en caso contrario (D < H);
+     * saldo cero cuando la suma de los valores del debe y haber son iguales (D=H).
+  * Saldar: consiste en efectuar una anotación por el importe del saldo en el debe de la cuenta, si su saldo es acreedor, o en el haber si es deudor, de tal forma que resulte un saldo cero.
+  * Cerrar: saldar una cuenta y no volver a registrar ninguna otra operación en la misma durante un determinado período
+
+
+
+ ==== Plan de Cuentas ====
+Es un sistema de clasificación para cada tipo de movimiento contable que la empresa puede realizar. En el caso de Micorp, éste es su [[http://ucvlibre.org.ve/dokuwiki/lib/exe/fetch.php?media=proyectos:tryton:micorp:plan_de_cuentas_micorp.pdf|Plan de Cuentas]].\\ 
+Los movimientos contables, pueden ser clasificados en 9 tipos distintos, los que a su vez, pueden ser dividos en varios niveles y subniveles. Los 9 niveles superiores son enumerados del 1 al 9, subdivisión hereda el número de su raíz, seguido de una numeración propia al nivel al que corresponde, dentro de un árbol que puede llegar a tener hasta niveles, correspondiendole al último nivel una numeración de 8 dígitos.\\
+^Numeración ^Cuenta ^Cuenta Madre ^Deber Haber ^Descripción^
+|1|[[https://es.wikipedia.org/wiki/Activo_%28contabilidad%29|Activos]]| |↑/↓| Bienes o derechos que tienen un beneficio económico a futuro. Eso no tiene por qué significar que sea necesaria la propiedad ni la tenencia ni el dinero. Los activos son un recurso o bien económico con el cual se obtienen beneficios |
+|2|[[https://es.wikipedia.org/wiki/Pasivo|Pasivos]]| |↓/↑|Financiamiento provisto por un acreedor y representa lo que la persona o empresa debe a terceros,1 como el pago a bancos, proveedores, impuestos, salarios a empleados, etc.|
+|3|Patrimonio| |es el conjunto de bienes y derechos, cargas y obligaciones, pertenecientes a una persona, física o jurídica.|
+|4|Ingresos| | |
+|5|Costos| | | |
+|6|Gastos| | | |
+|7| | | | |
+|8|Cuentas de Orden| | |
+|9|Cuentas de Orden Per Contra| | |
